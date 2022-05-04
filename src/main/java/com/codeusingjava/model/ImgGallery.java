@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "image_gallery")
 public class ImgGallery {
 
+	//model class
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false, unique = true)
 	private Long id;
