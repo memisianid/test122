@@ -16,7 +16,8 @@ public class ImgGalleryService {
 
 	@Autowired
 	private ImgGalleryRepo imageGalleryRepository;
-	
+
+	//save method
 	public void saveImage(ImgGallery imgGallery) {
 		imageGalleryRepository.save(imgGallery);	
 	}
