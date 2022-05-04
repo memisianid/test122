@@ -1,0 +1,94 @@
+Index: src/test/java/com/codeusingjava/SpringBootImageGalleryAppApplicationTests.java
+===================================================================
+diff --git a/src/test/java/com/codeusingjava/SpringBootImageGalleryAppApplicationTests.java b/src/test/java/com/codeusingjava/SpringBootImageGalleryAppApplicationTests.java
+deleted file mode 100644
+--- a/src/test/java/com/codeusingjava/SpringBootImageGalleryAppApplicationTests.java	(revision 03262eb1b7900df68390751bbb15a842c284d945)
++++ /dev/null	(revision 03262eb1b7900df68390751bbb15a842c284d945)
+@@ -1,13 +0,0 @@
+-package com.codeusingjava;
+-
+-import org.junit.jupiter.api.Test;
+-import org.springframework.boot.test.context.SpringBootTest;
+-
+-@SpringBootTest
+-class SpringBootImageGalleryAppApplicationTests {
+-
+-	@Test
+-	void contextLoads() {
+-	}
+-
+-}
+Index: src/main/resources/templates/images.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\" xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n  <title>PixelTrice</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css\">\r\n</head>\r\n<body>\r\n<br>\r\n<h1 class=\"text-center\">Image Gallery\r\n\r\n</h1>\r\n<br><br>\r\n\r\n<table id=\"example\" class=\"table  table-bordered text-center\">\r\n        <thead>\r\n            <tr>\r\n                <th>SR. No.</th>\r\n                <th>Name</th>\r\n                <th>Image</th>\r\n                <th>Price</th>\r\n\r\n            </tr>\r\n        </thead>\r\n        <tbody th:with=\"count=0\">\r\n        <tr th:each = \"gallery, hh : ${images}\">           \r\n                <td th:with=\"count=${count + 1}\" th:text=\"${count}\"></td>\r\n                <td th:text=\"${gallery.name}\"></td>\r\n                <td><img th:src=\"@{${'/image/display/'+ gallery.id}}\" \r\n                class=\"card img-fluid\" style=\"width:300px\" alt=\"\"/></td>\r\n                \r\n                <td th:text=\"${gallery.price}\"></td>\r\n               \r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n     <a href=\"/home\" class=\"btn btn-info text-right\">Go Home</a>\r\n\r\n\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n\t<script src=\"https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js\"></script>\r\n\t<script src=\"https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js\"></script>\r\n\t\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/images.html b/src/main/resources/templates/images.html
+--- a/src/main/resources/templates/images.html	(revision 03262eb1b7900df68390751bbb15a842c284d945)
++++ b/src/main/resources/templates/images.html	(date 1651594903034)
+@@ -1,7 +1,7 @@
+ <!DOCTYPE html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org">
+ <head>
+-  <title>PixelTrice</title>
++  <title>PixelPrice</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+Index: src/main/resources/templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <title>Image Gallery</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\r\n</head>\r\n<body>\r\n<br><br>\r\n<h1 class=\"text-center\">Upload Image into the Gallery</h1><br><br>\r\n<div class=\"container text-center\">\r\n<a  href=\"/image/display\" style=\"float:left;\" class=\"btn btn-success text-right\">Show All</a>\r\n</div>\r\n<div class=\"contact py-sm-5\">\r\n\t\t<div class=\"container py-xl-4 py-lg-2\">\r\n\t\t<!-- form -->\r\n\t\t<form id=\"form\">\r\n\t\t\t\t<div class=\"contact-grids1 w3agile-6\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Name</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Product Name\" id=\"name\" name=\"name\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_name\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Image</label>\r\n\t\t\t\t\t\t\t<input type=\"file\" class=\"form-control\" placeholder=\"\" name=\"image\" id=\"image\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_file\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Price</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Price\" name=\"price\" id=\"price\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_price\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"right-w3l\">\r\n\t\t\t\t\t\t\t<input type=\"button\" id=\"submit\" class=\"btn btn-primary form-control\" value=\"Submit\">\r\n\t\t\t\t\t\t\t<br><br>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t<br>\r\n\t\t\t\t<div id=\"success\" class=\"text-center\" style=\"color:green;\"></div>\r\n\t\t\t\t<div id=\"error\" class=\"text-center\" style=\"color:red;\"></div>\r\n\t\t\t</form>\r\n\t\t</div>\r\n\t</div>\r\n<p class=\"text-center\">\r\n  \t<img src=\"/images/loader.gif\" alt=\"loader\" style=\"width: 150px;height: 120px;\" id=\"loader\">\r\n</p>\r\n\t<script src=\"/js/product.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/index.html b/src/main/resources/templates/index.html
+--- a/src/main/resources/templates/index.html	(revision 03262eb1b7900df68390751bbb15a842c284d945)
++++ b/src/main/resources/templates/index.html	(date 1651596185014)
+@@ -15,6 +15,7 @@
+ <div class="container text-center">
+ <a  href="/image/display" style="float:left;" class="btn btn-success text-right">Show All</a>
+ </div>
++
+ <div class="contact py-sm-5">
+ 		<div class="container py-xl-4 py-lg-2">
+ 		<!-- form -->
+Index: target/classes/templates/images.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\" xmlns:th=\"http://www.thymeleaf.org\">\r\n<head>\r\n  <title>PixelTrice</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n  <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css\">\r\n</head>\r\n<body>\r\n<br>\r\n<h1 class=\"text-center\">Image Gallery\r\n\r\n</h1>\r\n<br><br>\r\n\r\n<table id=\"example\" class=\"table  table-bordered text-center\">\r\n        <thead>\r\n            <tr>\r\n                <th>SR. No.</th>\r\n                <th>Name</th>\r\n                <th>Image</th>\r\n                <th>Price</th>\r\n\r\n            </tr>\r\n        </thead>\r\n        <tbody th:with=\"count=0\">\r\n        <tr th:each = \"gallery, hh : ${images}\">           \r\n                <td th:with=\"count=${count + 1}\" th:text=\"${count}\"></td>\r\n                <td th:text=\"${gallery.name}\"></td>\r\n                <td><img th:src=\"@{${'/image/display/'+ gallery.id}}\" \r\n                class=\"card img-fluid\" style=\"width:300px\" alt=\"\"/></td>\r\n                \r\n                <td th:text=\"${gallery.price}\"></td>\r\n               \r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n     <a href=\"/home\" class=\"btn btn-info text-right\">Go Home</a>\r\n\r\n\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n\t<script src=\"https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js\"></script>\r\n\t<script src=\"https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js\"></script>\r\n\t\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/templates/images.html b/target/classes/templates/images.html
+--- a/target/classes/templates/images.html	(revision 03262eb1b7900df68390751bbb15a842c284d945)
++++ b/target/classes/templates/images.html	(date 1651594903034)
+@@ -1,7 +1,7 @@
+ <!DOCTYPE html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org">
+ <head>
+-  <title>PixelTrice</title>
++  <title>PixelPrice</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+Index: target/classes/templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <title>Image Gallery</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\r\n  <link rel=\"stylesheet\" href=\"/css/style.css\">\r\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>\r\n</head>\r\n<body>\r\n<br><br>\r\n<h1 class=\"text-center\">Upload Image into the Gallery</h1><br><br>\r\n<div class=\"container text-center\">\r\n<a  href=\"/image/display\" style=\"float:left;\" class=\"btn btn-success text-right\">Show All</a>\r\n</div>\r\n<div class=\"contact py-sm-5\">\r\n\t\t<div class=\"container py-xl-4 py-lg-2\">\r\n\t\t<!-- form -->\r\n\t\t<form id=\"form\">\r\n\t\t\t\t<div class=\"contact-grids1 w3agile-6\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Name</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Product Name\" id=\"name\" name=\"name\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_name\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Image</label>\r\n\t\t\t\t\t\t\t<input type=\"file\" class=\"form-control\" placeholder=\"\" name=\"image\" id=\"image\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_file\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\" contact-form1 form-group\">\r\n\t\t\t\t\t\t\t<label class=\"col-form-label\">Price</label>\r\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Price\" name=\"price\" id=\"price\" required=\"required\">\r\n\t\t\t\t\t\t\t<p id=\"error_price\"></p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"right-w3l\">\r\n\t\t\t\t\t\t\t<input type=\"button\" id=\"submit\" class=\"btn btn-primary form-control\" value=\"Submit\">\r\n\t\t\t\t\t\t\t<br><br>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t<br>\r\n\t\t\t\t<div id=\"success\" class=\"text-center\" style=\"color:green;\"></div>\r\n\t\t\t\t<div id=\"error\" class=\"text-center\" style=\"color:red;\"></div>\r\n\t\t\t</form>\r\n\t\t</div>\r\n\t</div>\r\n<p class=\"text-center\">\r\n  \t<img src=\"/images/loader.gif\" alt=\"loader\" style=\"width: 150px;height: 120px;\" id=\"loader\">\r\n</p>\r\n\t<script src=\"/js/product.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/templates/index.html b/target/classes/templates/index.html
+--- a/target/classes/templates/index.html	(revision 03262eb1b7900df68390751bbb15a842c284d945)
++++ b/target/classes/templates/index.html	(date 1651596185014)
+@@ -15,6 +15,7 @@
+ <div class="container text-center">
+ <a  href="/image/display" style="float:left;" class="btn btn-success text-right">Show All</a>
+ </div>
++
+ <div class="contact py-sm-5">
+ 		<div class="container py-xl-4 py-lg-2">
+ 		<!-- form -->

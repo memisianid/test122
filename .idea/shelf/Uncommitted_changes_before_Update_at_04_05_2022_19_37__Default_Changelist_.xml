@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_04_05_2022_19_37_[Default_Changelist]" date="1651685854277" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_19_37_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 04.05.2022 19:37 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/codeusingjava/service/ImgGalleryService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/codeusingjava/service/ImgGalleryService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_19_37_[Default_Changelist]/ImgGalleryService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/codeusingjava/model/ImgGallery.class" />
+    <option name="AFTER_PATH" value="target/classes/com/codeusingjava/model/ImgGallery.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_19_37_[Default_Changelist]/ImgGallery.class" />
+  </binary>
+</changelist>

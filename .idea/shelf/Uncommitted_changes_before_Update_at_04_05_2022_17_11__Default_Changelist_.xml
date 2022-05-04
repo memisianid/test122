@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_04_05_2022_17_11_[Default_Changelist]" date="1651677204918" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_17_11_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 04.05.2022 17:11 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/test-classes/com/codeusingjava/SpringBootImageGalleryAppApplicationTests.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
