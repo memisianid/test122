@@ -42,24 +42,13 @@ input[type="submit"] {
     -ms-transition: 0.5s all;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5, h6 {
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
 
-p {
-    margin: 0;
-    letter-spacing: 1px;
-    font-size: 15px;
-    line-height: 1.9;
-    color: #999;
-    font-family: 'Open Sans', sans-serif;
-}
+
+
 
 ul {
     margin: 0;
@@ -76,10 +65,7 @@ label {
     background: #0879c9;
 }
 
-.header-most-top p {
-    letter-spacing: 1px;
-    font-size: 15px;
-}
+
 
 /*-- header Lists --*/
 
@@ -180,17 +166,8 @@ input[type="submit"] {
     letter-spacing: 1px;
 }
 
-/*-- //location --*/
 
-/*-- //header Lists --*/
-
-/*-- //top-header --*/
-
-/*-- header-bottom --*/
-
-/*-- search --*/
-
-.agileits_search input[type="search"] {
+.search input[type="search"] {
     color: #191e21;
     width: 78%;
     letter-spacing: 1px;
@@ -198,7 +175,7 @@ input[type="submit"] {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.22);
 }
 
-.agileits_search button {
+.search button {
     border-radius: 0;
     background: #F45C5D;
     color: #fff;
@@ -2802,7 +2779,7 @@ div#testimonials h4.m-title {
     .w3l-space-banner {
         padding-top: 2em;
     }
-    .agileits_search button {
+    .search button {
         width: 22%;
     }
     h3.tittle-w3l {
@@ -2885,10 +2862,10 @@ div#testimonials h4.m-title {
         width: 35%;
         top: -8px;
     }
-    .agileits_search input[type="search"] {
+    .search input[type="search"] {
         font-size: 15px;
     }
-    .agileits_search button {
+    .search button {
         padding: 10px 0;
         font-size: 15px;
     }
@@ -3014,11 +2991,11 @@ div#testimonials h4.m-title {
     .logo_agile h1 a img {
         left: -29%;
     }
-    .agileits_search input[type="search"] {
+    .search input[type="search"] {
         font-size: 14px;
         width: 74%;
     }
-    .agileits_search button {
+    .search button {
         padding: 9px 0;
         font-size: 14px;
         width: 26%;

@@ -48,12 +48,12 @@ public class ImgGalleryController {
 		return "index";
 	}
 
+	//saves the images
 	@PostMapping("/image/saveImageDetails")
 	public @ResponseBody ResponseEntity<?> createProduct(@RequestParam("name") String name,
-			@RequestParam("price") double price, @RequestParam("description") String description, Model model, HttpServletRequest request
+			@RequestParam("price") double price, Model model, HttpServletRequest request
 			,final @RequestParam("image") MultipartFile file) {
 		try {
-			//String uploadDirectory = System.getProperty("user.dir") + uploadFolder;
 			String uploadDirectory = request.getServletContext().getRealPath(uploadFolder);
 			String fileName = file.getOriginalFilename();
 			String filePath = Paths.get(uploadDirectory, fileName).toString();
@@ -69,6 +69,7 @@ public class ImgGalleryController {
 					log.info("Folder Created");
 					dir.mkdirs();
 				}
+
 				// Save the file locally
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
 				stream.write(file.getBytes());
@@ -91,7 +92,8 @@ public class ImgGalleryController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
+
 	@GetMapping("/image/display/{id}")
 	@ResponseBody
 	void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<ImgGallery> imageGallery)
@@ -104,7 +106,7 @@ public class ImgGalleryController {
 	}
 
 
-
+//displays the Map of images
 	@GetMapping("/image/display")
 	String show(Model map) {
 		List<ImgGallery> images = imgGalleryService.getAllActiveImages();

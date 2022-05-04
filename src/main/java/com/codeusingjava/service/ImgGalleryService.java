@@ -21,13 +21,11 @@ public class ImgGalleryService {
 		imageGalleryRepository.save(imgGallery);	
 	}
 
-	public void deleteImage(ImgGallery imgGallery) {
-		imageGalleryRepository.delete(imgGallery);
-	}
 
 	public List<ImgGallery> getAllActiveImages() {
 		return imageGalleryRepository.findAll();
 	}
+
 
 	public Optional<ImgGallery> getImageById(Long id) {
 		return imageGalleryRepository.findById(id);
