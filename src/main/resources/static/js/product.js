@@ -1,6 +1,7 @@
    $(document).ready(function() {
     $('#loader').hide();
     $("#submit").on("click", function() {
+
     	$("#submit").prop("disabled", true);
     	var name = $("#name").val();
         var file = $("#image").val(); 
@@ -13,6 +14,7 @@
     	data.append('description', description); 
     	//alert(data);
         $('#loader').show();
+
         if (name === "" || file === "" || price === "" || description === "") {
         	$("#submit").prop("disabled", false);
             $('#loader').hide();
@@ -24,7 +26,9 @@
             $("#error_file").html("Please fill the required field.");
             $("#error_price").html("Please fill the required field.");
             $("#error_description").html("Please fill the required field.");
-        } else {
+        }
+
+        else {
             $("#name").css("border-color", "");
             $("#image").css("border-color", "");
             $("#price").css("border-color", "");
@@ -61,5 +65,5 @@
                         }
                     });
         }
-            });
-        });
+    });
+});

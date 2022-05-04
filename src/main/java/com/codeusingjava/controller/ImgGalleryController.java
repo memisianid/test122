@@ -1,18 +1,14 @@
 package com.codeusingjava.controller;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
-
 import java.util.List;
 import java.util.Optional;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +23,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.codeusingjava.model.ImgGallery;
 import com.codeusingjava.service.ImgGalleryService;
-
 
 @Controller
 public class ImgGalleryController {
@@ -48,7 +42,7 @@ public class ImgGalleryController {
 		return "index";
 	}
 
-	//saves the images
+	//speichert Bild
 	@PostMapping("/image/saveImageDetails")
 	public @ResponseBody ResponseEntity<?> createProduct(@RequestParam("name") String name,
 			@RequestParam("price") double price, Model model, HttpServletRequest request
@@ -93,7 +87,6 @@ public class ImgGalleryController {
 		}
 	}
 
-
 	@GetMapping("/image/display/{id}")
 	@ResponseBody
 	void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<ImgGallery> imageGallery)
@@ -105,8 +98,7 @@ public class ImgGalleryController {
 		response.getOutputStream().close();
 	}
 
-
-//displays the Map of images
+	//Zeigt die Map der Bilder
 	@GetMapping("/image/display")
 	String show(Model map) {
 		List<ImgGallery> images = imgGalleryService.getAllActiveImages();

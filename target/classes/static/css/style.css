@@ -47,9 +47,6 @@ h1,h2,h3,h4,h5, h6 {
     font-family: 'Lato', sans-serif;
 }
 
-
-
-
 ul {
     margin: 0;
     padding: 0;
@@ -64,8 +61,6 @@ label {
 .main-top-w3l {
     background: #0879c9;
 }
-
-
 
 /*-- header Lists --*/
 
@@ -165,7 +160,6 @@ input[type="submit"] {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
 }
-
 
 .search input[type="search"] {
     color: #191e21;
